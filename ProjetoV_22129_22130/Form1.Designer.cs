@@ -1,6 +1,6 @@
 ﻿namespace ProjetoV_22129_22130
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -32,40 +32,40 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
-            this.tabPageArvore = new System.Windows.Forms.TabPage();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.numericUpDownX = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownY = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonIncluirNome = new System.Windows.Forms.Button();
-            this.buttonExcluirCidade = new System.Windows.Forms.Button();
-            this.buttonAlterarCidade = new System.Windows.Forms.Button();
-            this.buttonExibirCidade = new System.Windows.Forms.Button();
-            this.textBoxCidadeDeDestino = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDownDistancia = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownTempo = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCusto = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonExibirCaminhos = new System.Windows.Forms.Button();
             this.buttonAlterarCaminhos = new System.Windows.Forms.Button();
             this.buttonExcluirCaminhos = new System.Windows.Forms.Button();
             this.buttonIncluirCaminhos = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDownCusto = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTempo = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDistancia = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxCidadeDeDestino = new System.Windows.Forms.TextBox();
+            this.buttonExibirCidade = new System.Windows.Forms.Button();
+            this.buttonAlterarCidade = new System.Windows.Forms.Button();
+            this.buttonExcluirCidade = new System.Windows.Forms.Button();
+            this.buttonIncluirNome = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownY = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownX = new System.Windows.Forms.NumericUpDown();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.tabPageArvore = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,56 +134,171 @@
             this.tabPageCadastro.Text = "Cadastro";
             this.tabPageCadastro.UseVisualStyleBackColor = true;
             // 
-            // tabPageArvore
+            // dataGridView1
             // 
-            this.tabPageArvore.Location = new System.Drawing.Point(4, 22);
-            this.tabPageArvore.Name = "tabPageArvore";
-            this.tabPageArvore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageArvore.Size = new System.Drawing.Size(1126, 610);
-            this.tabPageArvore.TabIndex = 1;
-            this.tabPageArvore.Text = "Árvore";
-            this.tabPageArvore.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 359);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(572, 245);
+            this.dataGridView1.TabIndex = 25;
             // 
-            // textBoxNome
+            // buttonExibirCaminhos
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(22, 73);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(318, 20);
-            this.textBoxNome.TabIndex = 2;
+            this.buttonExibirCaminhos.Location = new System.Drawing.Point(265, 328);
+            this.buttonExibirCaminhos.Name = "buttonExibirCaminhos";
+            this.buttonExibirCaminhos.Size = new System.Drawing.Size(75, 23);
+            this.buttonExibirCaminhos.TabIndex = 24;
+            this.buttonExibirCaminhos.Text = "Exibir";
+            this.buttonExibirCaminhos.UseVisualStyleBackColor = true;
+            this.buttonExibirCaminhos.Click += new System.EventHandler(this.buttonExibirCaminhos_Click);
             // 
-            // numericUpDownX
+            // buttonAlterarCaminhos
             // 
-            this.numericUpDownX.Location = new System.Drawing.Point(346, 73);
-            this.numericUpDownX.Name = "numericUpDownX";
-            this.numericUpDownX.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownX.TabIndex = 3;
+            this.buttonAlterarCaminhos.Location = new System.Drawing.Point(184, 329);
+            this.buttonAlterarCaminhos.Name = "buttonAlterarCaminhos";
+            this.buttonAlterarCaminhos.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarCaminhos.TabIndex = 23;
+            this.buttonAlterarCaminhos.Text = "Alterar";
+            this.buttonAlterarCaminhos.UseVisualStyleBackColor = true;
+            this.buttonAlterarCaminhos.Click += new System.EventHandler(this.buttonAlterarCaminhos_Click);
             // 
-            // numericUpDownY
+            // buttonExcluirCaminhos
             // 
-            this.numericUpDownY.Location = new System.Drawing.Point(472, 73);
-            this.numericUpDownY.Name = "numericUpDownY";
-            this.numericUpDownY.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownY.TabIndex = 4;
+            this.buttonExcluirCaminhos.Location = new System.Drawing.Point(103, 329);
+            this.buttonExcluirCaminhos.Name = "buttonExcluirCaminhos";
+            this.buttonExcluirCaminhos.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirCaminhos.TabIndex = 22;
+            this.buttonExcluirCaminhos.Text = "Excluir";
+            this.buttonExcluirCaminhos.UseVisualStyleBackColor = true;
+            this.buttonExcluirCaminhos.Click += new System.EventHandler(this.buttonExcluirCaminhos_Click);
             // 
-            // label3
+            // buttonIncluirCaminhos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(343, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "X";
+            this.buttonIncluirCaminhos.Location = new System.Drawing.Point(22, 329);
+            this.buttonIncluirCaminhos.Name = "buttonIncluirCaminhos";
+            this.buttonIncluirCaminhos.Size = new System.Drawing.Size(75, 23);
+            this.buttonIncluirCaminhos.TabIndex = 21;
+            this.buttonIncluirCaminhos.Text = "Incluir";
+            this.buttonIncluirCaminhos.UseVisualStyleBackColor = true;
+            this.buttonIncluirCaminhos.Click += new System.EventHandler(this.buttonIncluirCaminhos_Click);
             // 
-            // label4
+            // label9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(469, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(16, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Y";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(407, 284);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 16);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Custo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(212, 284);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Tempo";
+            // 
+            // numericUpDownCusto
+            // 
+            this.numericUpDownCusto.Location = new System.Drawing.Point(410, 303);
+            this.numericUpDownCusto.Name = "numericUpDownCusto";
+            this.numericUpDownCusto.Size = new System.Drawing.Size(182, 20);
+            this.numericUpDownCusto.TabIndex = 18;
+            // 
+            // numericUpDownTempo
+            // 
+            this.numericUpDownTempo.Location = new System.Drawing.Point(215, 303);
+            this.numericUpDownTempo.Name = "numericUpDownTempo";
+            this.numericUpDownTempo.Size = new System.Drawing.Size(189, 20);
+            this.numericUpDownTempo.TabIndex = 17;
+            // 
+            // numericUpDownDistancia
+            // 
+            this.numericUpDownDistancia.Location = new System.Drawing.Point(20, 303);
+            this.numericUpDownDistancia.Name = "numericUpDownDistancia";
+            this.numericUpDownDistancia.Size = new System.Drawing.Size(189, 20);
+            this.numericUpDownDistancia.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(19, 284);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Distância";
+            // 
+            // textBoxCidadeDeDestino
+            // 
+            this.textBoxCidadeDeDestino.Location = new System.Drawing.Point(22, 257);
+            this.textBoxCidadeDeDestino.Name = "textBoxCidadeDeDestino";
+            this.textBoxCidadeDeDestino.Size = new System.Drawing.Size(318, 20);
+            this.textBoxCidadeDeDestino.TabIndex = 14;
+            // 
+            // buttonExibirCidade
+            // 
+            this.buttonExibirCidade.Location = new System.Drawing.Point(265, 99);
+            this.buttonExibirCidade.Name = "buttonExibirCidade";
+            this.buttonExibirCidade.Size = new System.Drawing.Size(75, 23);
+            this.buttonExibirCidade.TabIndex = 13;
+            this.buttonExibirCidade.Text = "Exibir";
+            this.buttonExibirCidade.UseVisualStyleBackColor = true;
+            this.buttonExibirCidade.Click += new System.EventHandler(this.buttonExibirCidade_Click);
+            // 
+            // buttonAlterarCidade
+            // 
+            this.buttonAlterarCidade.Location = new System.Drawing.Point(184, 100);
+            this.buttonAlterarCidade.Name = "buttonAlterarCidade";
+            this.buttonAlterarCidade.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarCidade.TabIndex = 12;
+            this.buttonAlterarCidade.Text = "Alterar";
+            this.buttonAlterarCidade.UseVisualStyleBackColor = true;
+            this.buttonAlterarCidade.Click += new System.EventHandler(this.buttonAlterarCidade_Click);
+            // 
+            // buttonExcluirCidade
+            // 
+            this.buttonExcluirCidade.Location = new System.Drawing.Point(103, 100);
+            this.buttonExcluirCidade.Name = "buttonExcluirCidade";
+            this.buttonExcluirCidade.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirCidade.TabIndex = 11;
+            this.buttonExcluirCidade.Text = "Excluir";
+            this.buttonExcluirCidade.UseVisualStyleBackColor = true;
+            this.buttonExcluirCidade.Click += new System.EventHandler(this.buttonExcluirCidade_Click);
+            // 
+            // buttonIncluirNome
+            // 
+            this.buttonIncluirNome.Location = new System.Drawing.Point(22, 100);
+            this.buttonIncluirNome.Name = "buttonIncluirNome";
+            this.buttonIncluirNome.Size = new System.Drawing.Size(75, 23);
+            this.buttonIncluirNome.TabIndex = 10;
+            this.buttonIncluirNome.Text = "Incluir";
+            this.buttonIncluirNome.UseVisualStyleBackColor = true;
+            this.buttonIncluirNome.Click += new System.EventHandler(this.buttonIncluirNome_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(19, 238);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Cidade De Destino";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 24);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Caminhos";
             // 
             // pictureBox
             // 
@@ -196,182 +311,75 @@
             this.pictureBox.TabIndex = 7;
             this.pictureBox.TabStop = false;
             // 
-            // label5
+            // label4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 196);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 24);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Caminhos";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(469, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Y";
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 238);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Cidade De Destino";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(343, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "X";
             // 
-            // buttonIncluirNome
+            // numericUpDownY
             // 
-            this.buttonIncluirNome.Location = new System.Drawing.Point(22, 100);
-            this.buttonIncluirNome.Name = "buttonIncluirNome";
-            this.buttonIncluirNome.Size = new System.Drawing.Size(75, 23);
-            this.buttonIncluirNome.TabIndex = 10;
-            this.buttonIncluirNome.Text = "Incluir";
-            this.buttonIncluirNome.UseVisualStyleBackColor = true;
+            this.numericUpDownY.Location = new System.Drawing.Point(472, 73);
+            this.numericUpDownY.Name = "numericUpDownY";
+            this.numericUpDownY.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownY.TabIndex = 4;
             // 
-            // buttonExcluirCidade
+            // numericUpDownX
             // 
-            this.buttonExcluirCidade.Location = new System.Drawing.Point(103, 100);
-            this.buttonExcluirCidade.Name = "buttonExcluirCidade";
-            this.buttonExcluirCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirCidade.TabIndex = 11;
-            this.buttonExcluirCidade.Text = "Excluir";
-            this.buttonExcluirCidade.UseVisualStyleBackColor = true;
+            this.numericUpDownX.Location = new System.Drawing.Point(346, 73);
+            this.numericUpDownX.Name = "numericUpDownX";
+            this.numericUpDownX.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownX.TabIndex = 3;
             // 
-            // buttonAlterarCidade
+            // textBoxNome
             // 
-            this.buttonAlterarCidade.Location = new System.Drawing.Point(184, 100);
-            this.buttonAlterarCidade.Name = "buttonAlterarCidade";
-            this.buttonAlterarCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarCidade.TabIndex = 12;
-            this.buttonAlterarCidade.Text = "Alterar";
-            this.buttonAlterarCidade.UseVisualStyleBackColor = true;
+            this.textBoxNome.Location = new System.Drawing.Point(22, 73);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(318, 20);
+            this.textBoxNome.TabIndex = 2;
             // 
-            // buttonExibirCidade
+            // tabPageArvore
             // 
-            this.buttonExibirCidade.Location = new System.Drawing.Point(265, 99);
-            this.buttonExibirCidade.Name = "buttonExibirCidade";
-            this.buttonExibirCidade.Size = new System.Drawing.Size(75, 23);
-            this.buttonExibirCidade.TabIndex = 13;
-            this.buttonExibirCidade.Text = "Exibir";
-            this.buttonExibirCidade.UseVisualStyleBackColor = true;
+            this.tabPageArvore.Location = new System.Drawing.Point(4, 22);
+            this.tabPageArvore.Name = "tabPageArvore";
+            this.tabPageArvore.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageArvore.Size = new System.Drawing.Size(1126, 610);
+            this.tabPageArvore.TabIndex = 1;
+            this.tabPageArvore.Text = "Árvore";
+            this.tabPageArvore.UseVisualStyleBackColor = true;
             // 
-            // textBoxCidadeDeDestino
-            // 
-            this.textBoxCidadeDeDestino.Location = new System.Drawing.Point(22, 257);
-            this.textBoxCidadeDeDestino.Name = "textBoxCidadeDeDestino";
-            this.textBoxCidadeDeDestino.Size = new System.Drawing.Size(318, 20);
-            this.textBoxCidadeDeDestino.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 284);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 16);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Distância";
-            // 
-            // numericUpDownDistancia
-            // 
-            this.numericUpDownDistancia.Location = new System.Drawing.Point(20, 303);
-            this.numericUpDownDistancia.Name = "numericUpDownDistancia";
-            this.numericUpDownDistancia.Size = new System.Drawing.Size(189, 20);
-            this.numericUpDownDistancia.TabIndex = 16;
-            // 
-            // numericUpDownTempo
-            // 
-            this.numericUpDownTempo.Location = new System.Drawing.Point(215, 303);
-            this.numericUpDownTempo.Name = "numericUpDownTempo";
-            this.numericUpDownTempo.Size = new System.Drawing.Size(189, 20);
-            this.numericUpDownTempo.TabIndex = 17;
-            // 
-            // numericUpDownCusto
-            // 
-            this.numericUpDownCusto.Location = new System.Drawing.Point(410, 303);
-            this.numericUpDownCusto.Name = "numericUpDownCusto";
-            this.numericUpDownCusto.Size = new System.Drawing.Size(182, 20);
-            this.numericUpDownCusto.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(212, 284);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 16);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Tempo";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(407, 284);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 16);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Custo";
-            // 
-            // buttonExibirCaminhos
-            // 
-            this.buttonExibirCaminhos.Location = new System.Drawing.Point(265, 328);
-            this.buttonExibirCaminhos.Name = "buttonExibirCaminhos";
-            this.buttonExibirCaminhos.Size = new System.Drawing.Size(75, 23);
-            this.buttonExibirCaminhos.TabIndex = 24;
-            this.buttonExibirCaminhos.Text = "Exibir";
-            this.buttonExibirCaminhos.UseVisualStyleBackColor = true;
-            // 
-            // buttonAlterarCaminhos
-            // 
-            this.buttonAlterarCaminhos.Location = new System.Drawing.Point(184, 329);
-            this.buttonAlterarCaminhos.Name = "buttonAlterarCaminhos";
-            this.buttonAlterarCaminhos.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlterarCaminhos.TabIndex = 23;
-            this.buttonAlterarCaminhos.Text = "Alterar";
-            this.buttonAlterarCaminhos.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcluirCaminhos
-            // 
-            this.buttonExcluirCaminhos.Location = new System.Drawing.Point(103, 329);
-            this.buttonExcluirCaminhos.Name = "buttonExcluirCaminhos";
-            this.buttonExcluirCaminhos.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluirCaminhos.TabIndex = 22;
-            this.buttonExcluirCaminhos.Text = "Excluir";
-            this.buttonExcluirCaminhos.UseVisualStyleBackColor = true;
-            // 
-            // buttonIncluirCaminhos
-            // 
-            this.buttonIncluirCaminhos.Location = new System.Drawing.Point(22, 329);
-            this.buttonIncluirCaminhos.Name = "buttonIncluirCaminhos";
-            this.buttonIncluirCaminhos.Size = new System.Drawing.Size(75, 23);
-            this.buttonIncluirCaminhos.TabIndex = 21;
-            this.buttonIncluirCaminhos.Text = "Incluir";
-            this.buttonIncluirCaminhos.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 359);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(572, 245);
-            this.dataGridView1.TabIndex = 25;
-            // 
-            // Form1
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 660);
             this.Controls.Add(this.tabControl);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form";
+            this.Text = "Form";
             this.tabControl.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPageCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
             this.ResumeLayout(false);
 
         }
