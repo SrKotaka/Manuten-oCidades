@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonExibirCaminhos = new System.Windows.Forms.Button();
             this.buttonAlterarCaminhos = new System.Windows.Forms.Button();
             this.buttonExcluirCaminhos = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.tabPageArvore = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).BeginInit();
@@ -100,7 +100,7 @@
             // 
             // tabPageCadastro
             // 
-            this.tabPageCadastro.Controls.Add(this.dataGridView1);
+            this.tabPageCadastro.Controls.Add(this.dataGridView);
             this.tabPageCadastro.Controls.Add(this.buttonExibirCaminhos);
             this.tabPageCadastro.Controls.Add(this.buttonAlterarCaminhos);
             this.tabPageCadastro.Controls.Add(this.buttonExcluirCaminhos);
@@ -134,13 +134,13 @@
             this.tabPageCadastro.Text = "Cadastro";
             this.tabPageCadastro.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 359);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(572, 245);
-            this.dataGridView1.TabIndex = 25;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(20, 359);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(572, 245);
+            this.dataGridView.TabIndex = 25;
             // 
             // buttonExibirCaminhos
             // 
@@ -373,7 +373,7 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPageCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCusto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDistancia)).EndInit();
@@ -410,7 +410,7 @@
         private System.Windows.Forms.Button buttonExibirCidade;
         private System.Windows.Forms.Button buttonAlterarCidade;
         private System.Windows.Forms.Button buttonExcluirCidade;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonExibirCaminhos;
         private System.Windows.Forms.Button buttonAlterarCaminhos;
         private System.Windows.Forms.Button buttonExcluirCaminhos;

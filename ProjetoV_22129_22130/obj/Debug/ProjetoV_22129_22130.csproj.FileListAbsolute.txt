@@ -1,0 +1,10 @@
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\bin\Debug\ProjetoV_22129_22130.exe.config
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\bin\Debug\ProjetoV_22129_22130.exe
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\bin\Debug\ProjetoV_22129_22130.pdb
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.csproj.AssemblyReference.cache
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.Form.resources
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.Properties.Resources.resources
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.csproj.GenerateResource.cache
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.csproj.CoreCompileInputs.cache
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.exe
+C:\Users\u22129\Documents\GitHub\ManutencaoCidades\ProjetoV_22129_22130\obj\Debug\ProjetoV_22129_22130.pdb
