@@ -95,7 +95,7 @@
             this.tabControl.Controls.Add(this.tabPageCadastro);
             this.tabControl.Controls.Add(this.tabPageArvore);
             this.tabControl.Location = new System.Drawing.Point(16, 15);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1512, 783);
@@ -130,9 +130,9 @@
             this.tabPageCadastro.Controls.Add(this.label1);
             this.tabPageCadastro.Controls.Add(this.label2);
             this.tabPageCadastro.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageCadastro.Name = "tabPageCadastro";
-            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageCadastro.Size = new System.Drawing.Size(1504, 754);
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
@@ -142,7 +142,7 @@
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(27, 442);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(763, 302);
@@ -151,7 +151,7 @@
             // buttonExibirCaminhos
             // 
             this.buttonExibirCaminhos.Location = new System.Drawing.Point(353, 404);
-            this.buttonExibirCaminhos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExibirCaminhos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExibirCaminhos.Name = "buttonExibirCaminhos";
             this.buttonExibirCaminhos.Size = new System.Drawing.Size(100, 28);
             this.buttonExibirCaminhos.TabIndex = 24;
@@ -162,7 +162,7 @@
             // buttonAlterarCaminhos
             // 
             this.buttonAlterarCaminhos.Location = new System.Drawing.Point(245, 405);
-            this.buttonAlterarCaminhos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlterarCaminhos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlterarCaminhos.Name = "buttonAlterarCaminhos";
             this.buttonAlterarCaminhos.Size = new System.Drawing.Size(100, 28);
             this.buttonAlterarCaminhos.TabIndex = 23;
@@ -173,7 +173,7 @@
             // buttonExcluirCaminhos
             // 
             this.buttonExcluirCaminhos.Location = new System.Drawing.Point(137, 405);
-            this.buttonExcluirCaminhos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExcluirCaminhos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExcluirCaminhos.Name = "buttonExcluirCaminhos";
             this.buttonExcluirCaminhos.Size = new System.Drawing.Size(100, 28);
             this.buttonExcluirCaminhos.TabIndex = 22;
@@ -184,7 +184,7 @@
             // buttonIncluirCaminhos
             // 
             this.buttonIncluirCaminhos.Location = new System.Drawing.Point(29, 405);
-            this.buttonIncluirCaminhos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIncluirCaminhos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIncluirCaminhos.Name = "buttonIncluirCaminhos";
             this.buttonIncluirCaminhos.Size = new System.Drawing.Size(100, 28);
             this.buttonIncluirCaminhos.TabIndex = 21;
@@ -217,7 +217,7 @@
             // numericUpDownCusto
             // 
             this.numericUpDownCusto.Location = new System.Drawing.Point(547, 373);
-            this.numericUpDownCusto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownCusto.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownCusto.Name = "numericUpDownCusto";
             this.numericUpDownCusto.Size = new System.Drawing.Size(243, 22);
             this.numericUpDownCusto.TabIndex = 18;
@@ -225,7 +225,7 @@
             // numericUpDownTempo
             // 
             this.numericUpDownTempo.Location = new System.Drawing.Point(287, 373);
-            this.numericUpDownTempo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownTempo.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownTempo.Name = "numericUpDownTempo";
             this.numericUpDownTempo.Size = new System.Drawing.Size(252, 22);
             this.numericUpDownTempo.TabIndex = 17;
@@ -233,7 +233,7 @@
             // numericUpDownDistancia
             // 
             this.numericUpDownDistancia.Location = new System.Drawing.Point(27, 373);
-            this.numericUpDownDistancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownDistancia.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownDistancia.Name = "numericUpDownDistancia";
             this.numericUpDownDistancia.Size = new System.Drawing.Size(252, 22);
             this.numericUpDownDistancia.TabIndex = 16;
@@ -252,7 +252,7 @@
             // textBoxCidadeDeDestino
             // 
             this.textBoxCidadeDeDestino.Location = new System.Drawing.Point(29, 316);
-            this.textBoxCidadeDeDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCidadeDeDestino.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCidadeDeDestino.Name = "textBoxCidadeDeDestino";
             this.textBoxCidadeDeDestino.Size = new System.Drawing.Size(423, 22);
             this.textBoxCidadeDeDestino.TabIndex = 14;
@@ -260,7 +260,7 @@
             // buttonExibirCidade
             // 
             this.buttonExibirCidade.Location = new System.Drawing.Point(353, 122);
-            this.buttonExibirCidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExibirCidade.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExibirCidade.Name = "buttonExibirCidade";
             this.buttonExibirCidade.Size = new System.Drawing.Size(100, 28);
             this.buttonExibirCidade.TabIndex = 13;
@@ -271,7 +271,7 @@
             // buttonAlterarCidade
             // 
             this.buttonAlterarCidade.Location = new System.Drawing.Point(245, 123);
-            this.buttonAlterarCidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlterarCidade.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlterarCidade.Name = "buttonAlterarCidade";
             this.buttonAlterarCidade.Size = new System.Drawing.Size(100, 28);
             this.buttonAlterarCidade.TabIndex = 12;
@@ -282,7 +282,7 @@
             // buttonExcluirCidade
             // 
             this.buttonExcluirCidade.Location = new System.Drawing.Point(137, 123);
-            this.buttonExcluirCidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExcluirCidade.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExcluirCidade.Name = "buttonExcluirCidade";
             this.buttonExcluirCidade.Size = new System.Drawing.Size(100, 28);
             this.buttonExcluirCidade.TabIndex = 11;
@@ -293,7 +293,7 @@
             // buttonIncluirNome
             // 
             this.buttonIncluirNome.Location = new System.Drawing.Point(29, 123);
-            this.buttonIncluirNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIncluirNome.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIncluirNome.Name = "buttonIncluirNome";
             this.buttonIncluirNome.Size = new System.Drawing.Size(100, 28);
             this.buttonIncluirNome.TabIndex = 10;
@@ -328,13 +328,12 @@
             this.pbMapa.Image = global::ProjetoV_22129_22130.Properties.Resources.Mapa_Marte_sem_rotas;
             this.pbMapa.InitialImage = null;
             this.pbMapa.Location = new System.Drawing.Point(797, 32);
-            this.pbMapa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbMapa.Margin = new System.Windows.Forms.Padding(4);
             this.pbMapa.Name = "pbMapa";
             this.pbMapa.Size = new System.Drawing.Size(683, 337);
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 7;
             this.pbMapa.TabStop = false;
-            this.pbMapa.Click += new System.EventHandler(this.pbMapa_Click);
             // 
             // label4
             // 
@@ -360,16 +359,18 @@
             // 
             // numericUpDownY
             // 
+            this.numericUpDownY.DecimalPlaces = 5;
             this.numericUpDownY.Location = new System.Drawing.Point(629, 90);
-            this.numericUpDownY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownY.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownY.Name = "numericUpDownY";
             this.numericUpDownY.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownY.TabIndex = 4;
             // 
             // numericUpDownX
             // 
+            this.numericUpDownX.DecimalPlaces = 5;
             this.numericUpDownX.Location = new System.Drawing.Point(461, 90);
-            this.numericUpDownX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownX.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownX.Name = "numericUpDownX";
             this.numericUpDownX.Size = new System.Drawing.Size(160, 22);
             this.numericUpDownX.TabIndex = 3;
@@ -377,7 +378,7 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(29, 90);
-            this.textBoxNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(423, 22);
             this.textBoxNome.TabIndex = 2;
@@ -385,9 +386,9 @@
             // tabPageArvore
             // 
             this.tabPageArvore.Location = new System.Drawing.Point(4, 25);
-            this.tabPageArvore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageArvore.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageArvore.Name = "tabPageArvore";
-            this.tabPageArvore.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageArvore.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageArvore.Size = new System.Drawing.Size(1504, 754);
             this.tabPageArvore.TabIndex = 1;
             this.tabPageArvore.Text = "Árvore";
@@ -399,10 +400,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1544, 812);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form";
             this.Text = "Form";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPageCadastro.PerformLayout();

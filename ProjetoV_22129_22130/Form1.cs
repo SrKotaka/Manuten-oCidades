@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,56 +6,21 @@ namespace ProjetoV_22129_22130
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        private ArvoreBinaria arvore;
-        private Cidade cidadeSelecionada;
         public Form()
         {
             InitializeComponent();
-            arvore = ManipuladorArquivos.CarregarCidades();
-            ManipuladorCaminhos.CarregarCaminhos(arvore);
-            AtualizarListaCidades();
+            ConfigurarDataGridView();
         }
 
 
         private void buttonIncluirNome_Click(object sender, EventArgs e)
         {
-            string nome = textBoxNome.Text.Trim();
-            int x, y;
-
-            if (!string.IsNullOrEmpty(nome) && int.TryParse(numericUpDownX.Text, out x) && int.TryParse(numericUpDownY.Text, out y))
-            {
-                var novaCidade = new Cidade(nome, x, y);
-                arvore.Inserir(novaCidade);
-                AtualizarListaCidades();
-                MessageBox.Show("Cidade adicionada com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Por favor, preencha todos os campos corretamente.");
-            }
+           
         }
 
         private void buttonExcluirCidade_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                string nome = dataGridView.SelectedRows[0].Cells["Nome"].Value.ToString();
-
-                if (arvore.Buscar(nome) != null)
-                {
-                    arvore.Remover(nome);
-                    AtualizarListaCidades();
-                    MessageBox.Show("Cidade removida com sucesso!");
-                }
-                else
-                {
-                    MessageBox.Show("Cidade não encontrada.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecione uma cidade para remover.");
-            }
+            
         }
 
         private void buttonAlterarCidade_Click(object sender, EventArgs e)
@@ -66,156 +30,162 @@ namespace ProjetoV_22129_22130
 
         private void buttonExibirCidade_Click(object sender, EventArgs e)
         {
-            string nome = textBoxNome.Text.Trim();
-            var cidade = arvore.Buscar(nome);
+            // Captura os dados da cidade e coordenadas
+            string nomeCidade = textBoxNome.Text;
 
-            if (cidade != null)
+            // Procura a cidade no DataGridView
+            bool cidadeEncontrada = false;
+            foreach (DataGridViewRow linha in dataGridView.Rows)
             {
-                numericUpDownX.Text = cidade.X.ToString();
-                numericUpDownY.Text = cidade.Y.ToString();
-                AtualizarListaCaminhos(cidade);
+                if (linha.Cells["Destino"].Value != null && linha.Cells["Destino"].Value.ToString() == nomeCidade)
+                {
+                    cidadeEncontrada = true;
+                    break;
+                }
+            }
+
+            if (cidadeEncontrada)
+            {
+                // Quando a cidade é encontrada, desenha o ponto no mapa
+
+                // Supondo que a PictureBox chamada pictureBoxMapa é onde o mapa é exibido
+                using (Graphics g = pbMapa.CreateGraphics())
+                {
+                    // Defina as coordenadas da cidade, dependendo do valor em X e Y
+                    // O X e Y aqui são valores que você usaria para desenhar a cidade no mapa.
+                    // Como exemplo, estou considerando que X e Y estão normalizados.
+                    int x = (int)(numericUpDownX.Value * pbMapa.Width);
+                    int y = (int)(numericUpDownY.Value * pbMapa.Height);
+
+                    // Desenhar o ponto vermelho
+                    g.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
+
+                    // Desenhar o nome da cidade
+                    g.DrawString(nomeCidade, new Font("Arial", 10), Brushes.Black, new PointF(x + 10, y - 10));
+                }
             }
             else
             {
-                MessageBox.Show("Cidade não encontrada.");
+                // Caso a cidade não tenha sido encontrada
+                MessageBox.Show("Cidade não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void buttonIncluirCaminhos_Click(object sender, EventArgs e)
         {
-           
+            // Captura os dados dos campos
+            string nomeDestino = textBoxCidadeDeDestino.Text;
+            int distancia = (int)numericUpDownDistancia.Value;
+            int tempo = (int)numericUpDownTempo.Value;
+            int custo = (int)numericUpDownCusto.Value;
+
+            // Verifica se os campos estão preenchidos
+            if (string.IsNullOrWhiteSpace(nomeDestino))
+            {
+                MessageBox.Show("O nome do destino não pode estar vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verifica se existe uma linha selecionada (caso contrário, cria uma nova linha)
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow linhaSelecionada = dataGridView.SelectedRows[0];
+
+                // Atualiza os dados da linha selecionada com os novos valores
+                linhaSelecionada.Cells["Destino"].Value = nomeDestino;
+                linhaSelecionada.Cells["Distancia"].Value = distancia;
+                linhaSelecionada.Cells["Tempo"].Value = tempo;
+                linhaSelecionada.Cells["Custo"].Value = custo;
+
+                // Exibe mensagem de sucesso
+                MessageBox.Show("Caminho alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Se não houver nenhuma linha selecionada, adiciona um novo caminho
+                dataGridView.Rows.Add(nomeDestino, distancia, tempo, custo);
+                MessageBox.Show("Caminho incluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void buttonExcluirCaminhos_Click(object sender, EventArgs e)
         {
-           
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                // Pergunta ao usuário se tem certeza que quer excluir a linha
+                DialogResult resultado = MessageBox.Show("Você tem certeza que deseja excluir este caminho?", "Excluir Caminho", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Exclui a linha selecionada
+                    foreach (DataGridViewRow linha in dataGridView.SelectedRows)
+                    {
+                        // Evita excluir a linha se for a linha de cabeçalho (caso a seleção inclua a linha de cabeçalho)
+                        if (!linha.IsNewRow)
+                        {
+                            dataGridView.Rows.RemoveAt(linha.Index);
+                        }
+                    }
+                    // Exibe uma mensagem de sucesso
+                    MessageBox.Show("Caminho excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                // Exibe mensagem caso nenhuma linha tenha sido selecionada
+                MessageBox.Show("Por favor, selecione um caminho para excluir.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonAlterarCaminhos_Click(object sender, EventArgs e)
         {
-           
+            // Verifica se há uma linha selecionada
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow linhaSelecionada = dataGridView.SelectedRows[0];
+
+                // Obtém os dados da linha selecionada
+                string destinoAtual = linhaSelecionada.Cells["Destino"].Value.ToString();
+                int distanciaAtual = Convert.ToInt32(linhaSelecionada.Cells["Distancia"].Value);
+                int tempoAtual = Convert.ToInt32(linhaSelecionada.Cells["Tempo"].Value);
+                int custoAtual = Convert.ToInt32(linhaSelecionada.Cells["Custo"].Value);
+
+                // Exibe os dados atuais nos campos de edição
+                textBoxCidadeDeDestino.Text = destinoAtual;
+                numericUpDownDistancia.Value = distanciaAtual;
+                numericUpDownTempo.Value = tempoAtual;
+                numericUpDownCusto.Value = custoAtual;
+
+                // Alerta o usuário que ele pode alterar os dados
+                MessageBox.Show("Edite os campos e clique em 'Incluir Caminhos' para confirmar as alterações.", "Alterar Caminho", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Caso nenhuma linha tenha sido selecionada
+                MessageBox.Show("Por favor, selecione um caminho para alterar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonExibirCaminhos_Click(object sender, EventArgs e)
         {
-          
+            
         }
-        private void AtualizarListaCidades()
+        private void ConfigurarDataGridView()
         {
-            dataGridView.Rows.Clear();
-            var cidades = arvore.ListarEmOrdem();
+            // Limpa qualquer configuração anterior
+            dataGridView.Columns.Clear();
 
-            foreach (var cidade in cidades)
-            {
-                dataGridView.Rows.Add(cidade.Nome, cidade.X, cidade.Y);
-            }
-        }
-        private void AtualizarListaCaminhos(Cidade cidade)
-        {
-            dataGridView.Rows.Clear();
-            foreach (var caminho in cidade.Caminhos)
-            {
-                dataGridView.Rows.Add(cidade.Nome, caminho.Destino.Nome, caminho.Distancia, caminho.Tempo, caminho.Custo);
-            }
-        }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ManipuladorArquivos.SalvarCidades(arvore);
-            ManipuladorCaminhos.SalvarCaminhos(arvore);
-            MessageBox.Show("Dados salvos com sucesso!");
-        }
+            // Adiciona as colunas ao DataGridView
+            dataGridView.Columns.Add("Destino", "Destino");
+            dataGridView.Columns.Add("Distancia", "Distância");
+            dataGridView.Columns.Add("Tempo", "Tempo");
+            dataGridView.Columns.Add("Custo", "Custo");
 
-        private void pbMapa_Click(object sender, PaintEventArgs e)
-        {
-            var graphics = e.Graphics;
-
-            // Ajuste proporcional para o tamanho do mapa
-            int mapaLargura = pbMapa.Width;
-            int mapaAltura = pbMapa.Height;
-            const int mapaOriginalLargura = 4096;
-            const int mapaOriginalAltura = 2048;
-
-            // Escalas
-            float escalaX = (float)mapaLargura / mapaOriginalLargura;
-            float escalaY = (float)mapaAltura / mapaOriginalAltura;
-
-            // Desenhar cidades
-            var cidades = arvore.ListarEmOrdem();
-            foreach (var cidade in cidades)
-            {
-                // Coordenadas ajustadas
-                int x = (int)(cidade.X * escalaX);
-                int y = (int)(cidade.Y * escalaY);
-
-                // Ponto representando a cidade
-                graphics.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
-
-                // Nome da cidade
-                graphics.DrawString(cidade.Nome, DefaultFont, Brushes.Black, x + 10, y - 10);
-            }
-
-            // Desenhar caminhos
-            if (cidadeSelecionada != null)
-            {
-                int xSelecionado = (int)(cidadeSelecionada.X * escalaX);
-                int ySelecionado = (int)(cidadeSelecionada.Y * escalaY);
-
-                // Destacar a cidade selecionada
-                graphics.FillEllipse(Brushes.Yellow, xSelecionado - 7, ySelecionado - 7, 14, 14);
-
-                // Destacar os caminhos
-                foreach (var caminho in cidadeSelecionada.Caminhos)
-                {
-                    int xDestino = (int)(caminho.Destino.X * escalaX);
-                    int yDestino = (int)(caminho.Destino.Y * escalaY);
-
-                    graphics.DrawLine(Pens.Green, xSelecionado, ySelecionado, xDestino, yDestino);
-                }
-            }
-
-        }
-        private void pbMapa_Click(object sender, EventArgs e)
-        {
-            var mouseArgs = (MouseEventArgs)e;
-            int xClicado = mouseArgs.X;
-            int yClicado = mouseArgs.Y;
-
-            // Identificar cidade mais próxima (exemplo simples):
-            Cidade cidadeMaisProxima = null;
-            double menorDistancia = double.MaxValue;
-
-            var cidades = arvore.ListarEmOrdem();
-            foreach (var cidade in cidades)
-            {
-                int xCidade = (int)(cidade.X * pbMapa.Width / 4096.0);
-                int yCidade = (int)(cidade.Y * pbMapa.Height / 2048.0);
-
-                double distancia = Math.Sqrt(Math.Pow(xCidade - xClicado, 2) + Math.Pow(yCidade - yClicado, 2));
-                if (distancia < menorDistancia)
-                {
-                    menorDistancia = distancia;
-                    cidadeMaisProxima = cidade;
-                }
-            }
-
-            if (cidadeMaisProxima != null && menorDistancia < 15) // Limite de proximidade
-            {
-                MessageBox.Show($"Cidade mais próxima: {cidadeMaisProxima.Nome}");
-            }
-            else
-            {
-                MessageBox.Show("Nenhuma cidade próxima ao ponto clicado.");
-            }
-        }
-
-        private void AtualizarMapa()
-        {
-            pbMapa.Invalidate();
-        }
-        private void SelecionarCidade(string nomeCidade)
-        {
-            cidadeSelecionada = arvore.Buscar(nomeCidade);
-            AtualizarMapa();
+            // Opcional: Define propriedades como largura ajustável e leitura apenas
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ReadOnly = true;
         }
     }
 }
