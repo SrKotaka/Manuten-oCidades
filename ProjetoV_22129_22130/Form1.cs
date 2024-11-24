@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,65 +13,114 @@ namespace ProjetoV_22129_22130
             ConfigurarDataGridView();
         }
 
+        private Dictionary<string, Point> coordenadasCidades = new Dictionary<string, Point>();
 
+        //FEITO
         private void buttonIncluirNome_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void buttonExcluirCidade_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonAlterarCidade_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonExibirCidade_Click(object sender, EventArgs e)
-        {
-            // Captura os dados da cidade e coordenadas
             string nomeCidade = textBoxNome.Text;
 
-            // Procura a cidade no DataGridView
-            bool cidadeEncontrada = false;
-            foreach (DataGridViewRow linha in dataGridView.Rows)
+            // Remove a verificação da cidade no DataGridView
+
+            // Calcula as coordenadas da cidade com base nos valores numéricos X e Y
+            int x = (int)(numericUpDownX.Value * pbMapa.Width);
+            int y = (int)(numericUpDownY.Value * pbMapa.Height);
+
+            using (Graphics g = pbMapa.CreateGraphics())
             {
-                if (linha.Cells["Destino"].Value != null && linha.Cells["Destino"].Value.ToString() == nomeCidade)
-                {
-                    cidadeEncontrada = true;
-                    break;
-                }
+                // Desenha o ponto da cidade no mapa
+                g.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
+                g.DrawString(nomeCidade, new Font("Arial", 10), Brushes.Black, new PointF(x + 10, y - 10));
             }
 
-            if (cidadeEncontrada)
-            {
-                // Quando a cidade é encontrada, desenha o ponto no mapa
+            // Salva ou atualiza as coordenadas da cidade
+            coordenadasCidades[nomeCidade] = new Point(x, y);
 
-                // Supondo que a PictureBox chamada pictureBoxMapa é onde o mapa é exibido
+            MessageBox.Show($"Cidade '{nomeCidade}' adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        //FEITO
+        private void buttonExcluirCidade_Click(object sender, EventArgs e)
+        {
+            string nomeCidade = textBoxNome.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nomeCidade))
+            {
+                MessageBox.Show("Por favor, insira o nome da cidade a ser excluída.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (coordenadasCidades.ContainsKey(nomeCidade))
+            {
+                // Remove a cidade do dicionário
+                coordenadasCidades.Remove(nomeCidade);
+
+                // Redesenha o PictureBox sem a cidade excluída
+                pbMapa.Refresh();
+
                 using (Graphics g = pbMapa.CreateGraphics())
                 {
-                    // Defina as coordenadas da cidade, dependendo do valor em X e Y
-                    // O X e Y aqui são valores que você usaria para desenhar a cidade no mapa.
-                    // Como exemplo, estou considerando que X e Y estão normalizados.
-                    int x = (int)(numericUpDownX.Value * pbMapa.Width);
-                    int y = (int)(numericUpDownY.Value * pbMapa.Height);
-
-                    // Desenhar o ponto vermelho
-                    g.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
-
-                    // Desenhar o nome da cidade
-                    g.DrawString(nomeCidade, new Font("Arial", 10), Brushes.Black, new PointF(x + 10, y - 10));
+                    // Reinsere os pontos das cidades restantes
+                    foreach (var cidade in coordenadasCidades)
+                    {
+                        Point ponto = cidade.Value;
+                        g.FillEllipse(Brushes.Red, ponto.X - 5, ponto.Y - 5, 10, 10);
+                        g.DrawString(cidade.Key, new Font("Arial", 10), Brushes.Black, new PointF(ponto.X + 10, ponto.Y - 10));
+                    }
                 }
+
+                MessageBox.Show($"A cidade '{nomeCidade}' foi excluída com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Caso a cidade não tenha sido encontrada
+                MessageBox.Show("Cidade não encontrada no mapa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //FEITO
+        private void buttonAlterarCidade_Click(object sender, EventArgs e)
+        {
+            string nomeCidade = textBoxNome.Text.Trim(); // Nome da cidade a ser alterada
+            int novoX = (int)(numericUpDownX.Value * pbMapa.Width); // Nova coordenada X
+            int novoY = (int)(numericUpDownY.Value * pbMapa.Height); // Nova coordenada Y
+
+            // Verifica se o nome da cidade foi informado
+            if (string.IsNullOrWhiteSpace(nomeCidade))
+            {
+                MessageBox.Show("Por favor, insira o nome da cidade a ser alterada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verifica se a cidade existe no dicionário
+            if (coordenadasCidades.ContainsKey(nomeCidade))
+            {
+                // Atualiza as coordenadas da cidade
+                coordenadasCidades[nomeCidade] = new Point(novoX, novoY);
+
+                // Redesenha o mapa
+                pbMapa.Refresh();
+                using (Graphics g = pbMapa.CreateGraphics())
+                {
+                    foreach (var cidade in coordenadasCidades)
+                    {
+                        Point ponto = cidade.Value;
+                        g.FillEllipse(Brushes.Red, ponto.X - 5, ponto.Y - 5, 10, 10);
+                        g.DrawString(cidade.Key, new Font("Arial", 10), Brushes.Black, new PointF(ponto.X + 10, ponto.Y - 10));
+                    }
+                }
+
+                MessageBox.Show("Coordenadas alteradas com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 MessageBox.Show("Cidade não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        private void buttonExibirCidade_Click(object sender, EventArgs e)
+        {
+           
+        }
+        //FEITO
         private void buttonIncluirCaminhos_Click(object sender, EventArgs e)
         {
             // Captura os dados dos campos
@@ -109,6 +159,7 @@ namespace ProjetoV_22129_22130
             }
         }
 
+        //FEITO
         private void buttonExcluirCaminhos_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count > 0)
@@ -138,6 +189,7 @@ namespace ProjetoV_22129_22130
             }
         }
 
+        //FEITO
         private void buttonAlterarCaminhos_Click(object sender, EventArgs e)
         {
             // Verifica se há uma linha selecionada
@@ -172,6 +224,7 @@ namespace ProjetoV_22129_22130
         {
             
         }
+        //FEITO
         private void ConfigurarDataGridView()
         {
             // Limpa qualquer configuração anterior
