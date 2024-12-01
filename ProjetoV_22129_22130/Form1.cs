@@ -7,34 +7,32 @@ namespace ProjetoV_22129_22130
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private List<Cidade> cidades = new List<Cidade>();
+        private List<Caminho> caminhos = new List<Caminho>();
+        private Dictionary<string, Point> coordenadasCidades = new Dictionary<string, Point>();
         public Form()
         {
             InitializeComponent();
             ConfigurarDataGridView();
         }
 
-        private Dictionary<string, Point> coordenadasCidades = new Dictionary<string, Point>();
-
         //FEITO
         private void buttonIncluirNome_Click(object sender, EventArgs e)
         {
             string nomeCidade = textBoxNome.Text;
-
-            // Remove a verificação da cidade no DataGridView
-
-            // Calcula as coordenadas da cidade com base nos valores numéricos X e Y
             int x = (int)(numericUpDownX.Value * pbMapa.Width);
             int y = (int)(numericUpDownY.Value * pbMapa.Height);
 
+            // Cria uma nova cidade
+            Cidade novaCidade = new Cidade(nomeCidade, x, y);
+            cidades.Add(novaCidade);
+
+            // Desenha a cidade no mapa
             using (Graphics g = pbMapa.CreateGraphics())
             {
-                // Desenha o ponto da cidade no mapa
                 g.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
                 g.DrawString(nomeCidade, new Font("Arial", 10), Brushes.Black, new PointF(x + 10, y - 10));
             }
-
-            // Salva ou atualiza as coordenadas da cidade
-            coordenadasCidades[nomeCidade] = new Point(x, y);
 
             MessageBox.Show($"Cidade '{nomeCidade}' adicionada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -49,22 +47,21 @@ namespace ProjetoV_22129_22130
                 return;
             }
 
-            if (coordenadasCidades.ContainsKey(nomeCidade))
+            Cidade cidadeParaExcluir = cidades.Find(c => c.Nome == nomeCidade);
+
+            if (cidadeParaExcluir != null)
             {
-                // Remove a cidade do dicionário
-                coordenadasCidades.Remove(nomeCidade);
+                // Remove a cidade da lista
+                cidades.Remove(cidadeParaExcluir);
 
-                // Redesenha o PictureBox sem a cidade excluída
+                // Redesenha o mapa sem a cidade excluída
                 pbMapa.Refresh();
-
                 using (Graphics g = pbMapa.CreateGraphics())
                 {
-                    // Reinsere os pontos das cidades restantes
-                    foreach (var cidade in coordenadasCidades)
+                    foreach (var cidade in cidades)
                     {
-                        Point ponto = cidade.Value;
-                        g.FillEllipse(Brushes.Red, ponto.X - 5, ponto.Y - 5, 10, 10);
-                        g.DrawString(cidade.Key, new Font("Arial", 10), Brushes.Black, new PointF(ponto.X + 10, ponto.Y - 10));
+                        g.FillEllipse(Brushes.Red, cidade.X - 5, cidade.Y - 5, 10, 10);
+                        g.DrawString(cidade.Nome, new Font("Arial", 10), Brushes.Black, new PointF(cidade.X + 10, cidade.Y - 10));
                     }
                 }
 
@@ -79,32 +76,27 @@ namespace ProjetoV_22129_22130
         //FEITO
         private void buttonAlterarCidade_Click(object sender, EventArgs e)
         {
-            string nomeCidade = textBoxNome.Text.Trim(); // Nome da cidade a ser alterada
-            int novoX = (int)(numericUpDownX.Value * pbMapa.Width); // Nova coordenada X
-            int novoY = (int)(numericUpDownY.Value * pbMapa.Height); // Nova coordenada Y
+            string nomeCidade = textBoxNome.Text.Trim();
+            int novoX = (int)(numericUpDownX.Value * pbMapa.Width);
+            int novoY = (int)(numericUpDownY.Value * pbMapa.Height);
 
-            // Verifica se o nome da cidade foi informado
-            if (string.IsNullOrWhiteSpace(nomeCidade))
-            {
-                MessageBox.Show("Por favor, insira o nome da cidade a ser alterada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            // Encontra a cidade a ser alterada
+            Cidade cidadeAlterada = cidades.Find(c => c.Nome == nomeCidade);
 
-            // Verifica se a cidade existe no dicionário
-            if (coordenadasCidades.ContainsKey(nomeCidade))
+            if (cidadeAlterada != null)
             {
-                // Atualiza as coordenadas da cidade
-                coordenadasCidades[nomeCidade] = new Point(novoX, novoY);
+                // Atualiza as coordenadas
+                cidadeAlterada.X = novoX;
+                cidadeAlterada.Y = novoY;
 
                 // Redesenha o mapa
                 pbMapa.Refresh();
                 using (Graphics g = pbMapa.CreateGraphics())
                 {
-                    foreach (var cidade in coordenadasCidades)
+                    foreach (var cidade in cidades)
                     {
-                        Point ponto = cidade.Value;
-                        g.FillEllipse(Brushes.Red, ponto.X - 5, ponto.Y - 5, 10, 10);
-                        g.DrawString(cidade.Key, new Font("Arial", 10), Brushes.Black, new PointF(ponto.X + 10, ponto.Y - 10));
+                        g.FillEllipse(Brushes.Red, cidade.X - 5, cidade.Y - 5, 10, 10);
+                        g.DrawString(cidade.Nome, new Font("Arial", 10), Brushes.Black, new PointF(cidade.X + 10, cidade.Y - 10));
                     }
                 }
 
@@ -123,7 +115,6 @@ namespace ProjetoV_22129_22130
         //FEITO
         private void buttonIncluirCaminhos_Click(object sender, EventArgs e)
         {
-            // Captura os dados dos campos
             string nomeDestino = textBoxCidadeDeDestino.Text;
             int distancia = (int)numericUpDownDistancia.Value;
             int tempo = (int)numericUpDownTempo.Value;
@@ -136,26 +127,23 @@ namespace ProjetoV_22129_22130
                 return;
             }
 
-            // Verifica se existe uma linha selecionada (caso contrário, cria uma nova linha)
-            if (dataGridView.SelectedRows.Count > 0)
+            // Encontra a cidade de origem
+            Cidade cidadeOrigem = cidades.Find(c => c.Nome == textBoxNome.Text);
+
+            if (cidadeOrigem != null)
             {
-                // Obtém a linha selecionada
-                DataGridViewRow linhaSelecionada = dataGridView.SelectedRows[0];
+                // Cria o caminho
+                Caminho novoCaminho = new Caminho(cidadeOrigem, distancia, tempo, custo);
+                cidadeOrigem.Caminhos.Add(novoCaminho);
 
-                // Atualiza os dados da linha selecionada com os novos valores
-                linhaSelecionada.Cells["Destino"].Value = nomeDestino;
-                linhaSelecionada.Cells["Distancia"].Value = distancia;
-                linhaSelecionada.Cells["Tempo"].Value = tempo;
-                linhaSelecionada.Cells["Custo"].Value = custo;
+                // Atualiza o DataGridView com os caminhos
+                dataGridView.Rows.Add(nomeDestino, distancia, tempo, custo);
 
-                // Exibe mensagem de sucesso
-                MessageBox.Show("Caminho alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Caminho incluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Se não houver nenhuma linha selecionada, adiciona um novo caminho
-                dataGridView.Rows.Add(nomeDestino, distancia, tempo, custo);
-                MessageBox.Show("Caminho incluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cidade de origem não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -227,16 +215,12 @@ namespace ProjetoV_22129_22130
         //FEITO
         private void ConfigurarDataGridView()
         {
-            // Limpa qualquer configuração anterior
             dataGridView.Columns.Clear();
-
-            // Adiciona as colunas ao DataGridView
             dataGridView.Columns.Add("Destino", "Destino");
             dataGridView.Columns.Add("Distancia", "Distância");
             dataGridView.Columns.Add("Tempo", "Tempo");
             dataGridView.Columns.Add("Custo", "Custo");
 
-            // Opcional: Define propriedades como largura ajustável e leitura apenas
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.ReadOnly = true;
         }
