@@ -334,6 +334,8 @@
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 7;
             this.pbMapa.TabStop = false;
+            this.pbMapa.Click += new System.EventHandler(this.pbMapa_Click);
+            this.pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
             // 
             // label4
             // 

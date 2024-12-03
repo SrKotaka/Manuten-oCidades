@@ -18,12 +18,10 @@ namespace ProjetoV_22129_22130
         private NoArvore InserirRecursivo(NoArvore no, Cidade cidade)
         {
             if (no == null) return new NoArvore(cidade);
-
             if (string.Compare(cidade.Nome, no.Cidade.Nome, StringComparison.OrdinalIgnoreCase) < 0)
                 no.Esquerda = InserirRecursivo(no.Esquerda, cidade);
             else
                 no.Direita = InserirRecursivo(no.Direita, cidade);
-
             return no;
         }
 
@@ -35,10 +33,8 @@ namespace ProjetoV_22129_22130
         private NoArvore BuscarRecursivo(NoArvore no, string nome)
         {
             if (no == null || no.Cidade.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase)) return no;
-
             if (string.Compare(nome, no.Cidade.Nome, StringComparison.OrdinalIgnoreCase) < 0)
                 return BuscarRecursivo(no.Esquerda, nome);
-
             return BuscarRecursivo(no.Direita, nome);
         }
 
