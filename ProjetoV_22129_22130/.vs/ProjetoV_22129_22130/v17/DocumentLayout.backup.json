@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Caminho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Caminho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Cidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21302F4E-9FC3-4A88-B34F-8D0E53583510}|ProjetoV_22129_22130.csproj|solutionrelative:Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,21 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Cidade.cs",
+              "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Cidade.cs",
+              "RelativeDocumentMoniker": "Cidade.cs",
+              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Cidade.cs",
+              "RelativeToolTip": "Cidade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T23:47:24.429Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
@@ -47,26 +61,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Cidade.cs",
-              "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Cidade.cs",
-              "RelativeDocumentMoniker": "Cidade.cs",
-              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Cidade.cs",
-              "RelativeToolTip": "Cidade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T23:47:24.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Caminho.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Caminho.cs",
               "RelativeDocumentMoniker": "Caminho.cs",
               "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Caminho.cs",
               "RelativeToolTip": "Caminho.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "OverriddenGroupName": "",
               "WhenOpened": "2024-11-22T23:47:23.112Z",
@@ -74,12 +75,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs [Design]*",
-              "RelativeToolTip": "Form1.cs [Design]*",
+              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T23:11:13.624Z",
               "EditorCaption": " [Design]"
@@ -90,9 +91,9 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs*",
-              "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAANEAAAAAAAAAAAAAwN4AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Felip\\OneDrive\\Documentos\\GitHub\\ManutencaoCidades\\ProjetoV_22129_22130\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAmwA4BAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "OverriddenGroupName": "",
               "WhenOpened": "2024-11-22T23:11:11.553Z",

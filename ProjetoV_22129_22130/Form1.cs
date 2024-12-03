@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ProjetoV_22129_22130
@@ -9,7 +11,7 @@ namespace ProjetoV_22129_22130
     {
         private List<Cidade> cidades = new List<Cidade>();
         private List<Caminho> caminhos = new List<Caminho>();
-        private Dictionary<string, Point> coordenadasCidades = new Dictionary<string, Point>();
+        private ArvoreBinaria arvoreCidades = new ArvoreBinaria();
         public Form()
         {
             InitializeComponent();
@@ -224,5 +226,29 @@ namespace ProjetoV_22129_22130
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.ReadOnly = true;
         }
+
+        private void DesenharArvore(NoArvore no, Graphics g, int x, int y, int offset)
+        {
+            if (no == null) return;
+
+            // Desenha a cidade
+            g.FillEllipse(Brushes.Blue, x - 5, y - 5, 10, 10);
+            g.DrawString(no.Cidade.Nome, new Font("Arial", 8), Brushes.Black, x + 10, y);
+
+            // Desenha os nós filhos
+            if (no.Esquerda != null)
+            {
+                g.DrawLine(Pens.Black, x, y, x - offset, y + 50);
+                DesenharArvore(no.Esquerda, g, x - offset, y + 50, offset / 2);
+            }
+
+            if (no.Direita != null)
+            {
+                g.DrawLine(Pens.Black, x, y, x + offset, y + 50);
+                DesenharArvore(no.Direita, g, x + offset, y + 50, offset / 2);
+            }
+        }
+
+        
     }
 }
